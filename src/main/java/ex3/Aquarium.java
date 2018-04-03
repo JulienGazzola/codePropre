@@ -1,26 +1,21 @@
 package ex3;
 
-import java.util.List;
+/** Représente la zone Aquarium */
+public class Aquarium extends Zone {
 
-public class Aquarium {
+	/** Nombre de kg de nourriture */
+	private static final double NB_KG = 0.2;
 
-	private List<String> types;
-	private List<String> noms;
-	private List<String> comportements;
-	
-	public void addAnimal(String typeAnimal, String nomAnimal, String comportement) {
-		types.add(typeAnimal);
-		noms.add(nomAnimal);
-		comportements.add(comportement);
+	/** Retourne la quantité de nourriture par jour */
+	public double calculerKgsNourritureParJour() {
+		return listeAnimal.size() * NB_KG;
 	}
-	
-	public void afficherListeAnimaux(){
-		for (String nom: noms){
-			System.out.println(nom);
+
+	/** Affiche les animaux de la zone Aquarium */
+	public void afficherListeAnimaux() {
+		System.out.println("Présent dans la zone Aquarium :");
+		for (Animal animal : listeAnimal) {
+			System.out.println(animal.getNom());
 		}
-	}
-	
-	public double calculerKgsNourritureParJour(){
-		return noms.size() * 0.2;
 	}
 }
